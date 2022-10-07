@@ -1,2 +1,2 @@
-# leetcode
-practice repo for leetcode example and problem solving
+# problem solving
+practice repo for java problem solving.
