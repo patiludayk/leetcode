@@ -3,7 +3,9 @@ package com.uday.practise.ps.array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -33,29 +35,30 @@ public class GroupAnagram {
     }
 
     private List<List<String>> groupAnagrams(String[] strs) {
-        String[] sortedArray = new String[strs.length];
+        List<String> sortedList = new LinkedList<>();
 
         for(int i = 0; i < strs.length; i++){
             char[] charArray = strs[i].toCharArray();
             Arrays.sort(charArray);
-            sortedArray[i] = new String(charArray);
+            sortedList.add(new String(charArray));
         }
 
         Map<String, List<String>> rslt = new HashMap<>();
-        for(int i = 0; i < sortedArray.length; i++){
-            if(rslt.get(sortedArray[i]) != null){
-                List<String> values = rslt.get(sortedArray[i]);
+        for(int i = 0; i < sortedList.size(); i++){
+            if(rslt.get(sortedList.get(i)) != null){
+                List<String> values = rslt.get(sortedList.get(i));
                 values.add(strs[i]);
-                rslt.put(sortedArray[i], values);
+                rslt.put(sortedList.get(i), values);
             } else {
                 List<String> values = new ArrayList<>();
                 values.add(strs[i]);
-                rslt.put(sortedArray[i], values);
+                rslt.put(sortedList.get(i), values);
             }
         }
 
         List<List<String>> result = new ArrayList<>();
         for(List<String> value : rslt.values()){
+            Collections.sort(value);
             result.add(value);
         }
 
