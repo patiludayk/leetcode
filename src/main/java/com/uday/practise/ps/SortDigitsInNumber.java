@@ -1,7 +1,6 @@
 package com.uday.practise.ps;
 
 import java.util.Arrays;
-import java.util.Comparator;
 
 public class SortDigitsInNumber {
     public static void main(String[] args) {
@@ -57,6 +56,24 @@ public class SortDigitsInNumber {
 
         int sorted = 0;
         for (int digit = 1; digit < count.length; digit++) {
+            for (int frequency = count[digit]; frequency > 0; frequency--) {    //iterate for all occurrences of digit
+                sorted = sorted * 10 + digit;   //add next digit to sorted number
+            }
+        }
+        return sorted;
+    }
+
+    private int sortDesc(final int num) {
+        //Your code
+        int[] count = new int[10];  //size 10 because as any number contains digits between 0-9 only
+        int n = num;
+        while (n != 0) {    //fill count array with digit counts
+            count[n % 10]++;    //increase digit count
+            n /= 10;    //get next dogot from number
+        }
+
+        int sorted = 0;
+        for (int digit = 9; digit >= 0; digit--) {
             for (int index = count[digit]; index > 0; index--) {    //iterate for all occurrences of digit
                 sorted = sorted * 10 + digit;   //add next digit to sorted number
             }

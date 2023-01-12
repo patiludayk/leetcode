@@ -1,7 +1,6 @@
 package com.uday.practise.ps.array;
 
 import java.util.Arrays;
-import java.util.Collections;
 
 import static com.uday.practise.util.array.InputArrayUtil.COMMON_RANDOM_ARRAY;
 import static com.uday.practise.util.array.InputArrayUtil.printArray;
