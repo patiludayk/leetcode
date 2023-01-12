@@ -33,6 +33,7 @@ public class DigitSum {
      * @return
      */
     private long digitSumToSingleDigit(long number) {
+        //logic : number which is divisible by 9 has sum 9 and rest other numbers has sum is remainder of division by 9
         if(number % 9 == 0)
             return 9;
         return number % 9;
