@@ -35,31 +35,29 @@ public class GroupAnagram {
     }
 
     private List<List<String>> groupAnagrams(String[] strs) {
-        List<String> sortedList = new LinkedList<>();
-
+        List<String> sortedStrs = new ArrayList();
         for(int i = 0; i < strs.length; i++){
-            char[] charArray = strs[i].toCharArray();
-            Arrays.sort(charArray);
-            sortedList.add(new String(charArray));
+            char[] str = strs[i].toCharArray();
+            Arrays.sort(str);
+            sortedStrs.add(new String(str));
         }
 
-        Map<String, List<String>> rslt = new HashMap<>();
-        for(int i = 0; i < sortedList.size(); i++){
-            if(rslt.get(sortedList.get(i)) != null){
-                List<String> values = rslt.get(sortedList.get(i));
-                values.add(strs[i]);
-                rslt.put(sortedList.get(i), values);
+        Map<String, List<String>> groupAnagrams = new HashMap();
+        for(int i = 0; i < strs.length; i++){
+            if(groupAnagrams.get(sortedStrs.get(i)) != null){
+                List<String> groups = groupAnagrams.get(sortedStrs.get(i));
+                groups.add(strs[i]);
+                groupAnagrams.put(sortedStrs.get(i), groups);
             } else {
-                List<String> values = new ArrayList<>();
-                values.add(strs[i]);
-                rslt.put(sortedList.get(i), values);
+                List<String> groups = new ArrayList();
+                groups.add(strs[i]);
+                groupAnagrams.put(sortedStrs.get(i), groups);
             }
         }
 
-        List<List<String>> result = new ArrayList<>();
-        for(List<String> value : rslt.values()){
-            Collections.sort(value);
-            result.add(value);
+        List<List<String>> result = new ArrayList();
+        for(List<String> lst : groupAnagrams.values()){
+            result.add(lst);
         }
 
         return result;
