@@ -1,8 +1,7 @@
-package com.uday.practise.ps.array;
+package com.uday.practise.ps;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -33,30 +32,29 @@ public class GroupAnagram {
     }
 
     private List<List<String>> groupAnagrams(String[] strs) {
-        String[] sortedArray = new String[strs.length];
-
+        List<String> sortedStrs = new ArrayList();
         for(int i = 0; i < strs.length; i++){
-            char[] charArray = strs[i].toCharArray();
-            Arrays.sort(charArray);
-            sortedArray[i] = new String(charArray);
+            char[] str = strs[i].toCharArray();
+            Arrays.sort(str);
+            sortedStrs.add(new String(str));
         }
 
-        Map<String, List<String>> rslt = new HashMap<>();
-        for(int i = 0; i < sortedArray.length; i++){
-            if(rslt.get(sortedArray[i]) != null){
-                List<String> values = rslt.get(sortedArray[i]);
-                values.add(strs[i]);
-                rslt.put(sortedArray[i], values);
+        Map<String, List<String>> groupAnagrams = new HashMap();
+        for(int i = 0; i < strs.length; i++){
+            if(groupAnagrams.get(sortedStrs.get(i)) != null){
+                List<String> groups = groupAnagrams.get(sortedStrs.get(i));
+                groups.add(strs[i]);
+                groupAnagrams.put(sortedStrs.get(i), groups);
             } else {
-                List<String> values = new ArrayList<>();
-                values.add(strs[i]);
-                rslt.put(sortedArray[i], values);
+                List<String> groups = new ArrayList();
+                groups.add(strs[i]);
+                groupAnagrams.put(sortedStrs.get(i), groups);
             }
         }
 
-        List<List<String>> result = new ArrayList<>();
-        for(List<String> value : rslt.values()){
-            result.add(value);
+        List<List<String>> result = new ArrayList();
+        for(List<String> lst : groupAnagrams.values()){
+            result.add(lst);
         }
 
         return result;
