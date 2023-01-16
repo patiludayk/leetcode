@@ -1,4 +1,4 @@
-package com.uday.practise.ps.array;
+package com.uday.practise.ps;
 
 import java.util.HashMap;
 import java.util.Map;
