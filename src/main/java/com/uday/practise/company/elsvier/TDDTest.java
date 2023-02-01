@@ -58,15 +58,15 @@ public class TDDTest {
 
     private List<Page> generateData() {
 
-        Page google = Page.builder().url("Google.com").content("Google LLC is an American multinational technology company focusing on search engine technology, online advertising, cloud computing, computer software").build();
-        Page microsoft = Page.builder().url("microsoft.com").content("Microsoft Corporation is an American multinational technology corporation producing computer software, consumer electronics, personal computers").build();
-        Page amazon = Page.builder().url("amazon.com").content("Amazon.com, Inc. is an American multinational technology company focusing on e-commerce, cloud computing, online advertising, digital streaming").build();
+        //Page google = Page.builder().url("Google.com").content("Google LLC is an American multinational technology company focusing on search engine technology, online advertising, cloud computing, computer software").build();
+        //Page microsoft = Page.builder().url("microsoft.com").content("Microsoft Corporation is an American multinational technology corporation producing computer software, consumer electronics, personal computers").build();
+        //Page amazon = Page.builder().url("amazon.com").content("Amazon.com, Inc. is an American multinational technology company focusing on e-commerce, cloud computing, online advertising, digital streaming").build();
 
-        return Arrays.asList(google, microsoft, amazon);
+        //return Arrays.asList(google, microsoft, amazon);
+        return null;
     }
 
 
-    @Builder
     class Page {
         String url;
         String content;
