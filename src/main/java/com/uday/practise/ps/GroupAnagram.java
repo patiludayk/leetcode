@@ -28,6 +28,7 @@ public class GroupAnagram {
         GroupAnagram ga = new GroupAnagram();
 
         String[] input = new String[]{"eat", "tea", "tan", "ate", "nat", "bat"};
+        Arrays.sort(input);
         System.out.println(ga.groupAnagrams(input));
     }
 
