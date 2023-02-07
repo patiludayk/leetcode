@@ -43,11 +43,11 @@ import java.util.Map;
 public class TwoSum {
     public static void main(String[] args) {
 
-        //int[] nums = {2, 7, 11, 15};
-        //int target = 9;
+        int[] nums = {2, 8, 3, 7, 11, 15};
+        int target = 9;
 
-        int[] nums = {3,3};//{3,2,4};
-        int target = 6;
+        //int[] nums = {3,3};//{3,2,4};
+        //int target = 6;
         System.out.println(Arrays.toString(twoSum(nums, target)));
     }
 
