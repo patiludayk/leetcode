@@ -13,14 +13,14 @@ public class Employee {
         //perform some task
         final String currentThread = Thread.currentThread().getName();
         long startTime = System.currentTimeMillis();
-        long endTime = startTime + 15000;
+        long endTime = startTime + 9000;
 
         int temp = 0;
         while (endTime > startTime) {
             final String output = currentThread + ":" + temp + " ";
             System.out.print(ColourConstant.GREEN_BOLD + output + ColourConstant.RESET);
 
-            TimeUnit.SECONDS.sleep(3);
+            TimeUnit.SECONDS.sleep(1);
             startTime = System.currentTimeMillis();
             temp++;
         }
@@ -32,14 +32,14 @@ public class Employee {
         //perform some task
         final String currentThread = Thread.currentThread().getName();
         long startTime = System.currentTimeMillis();
-        long endTime = startTime + 15000;
+        long endTime = startTime + 2000;
 
         int temp = 0;
         while (endTime > startTime) {
             final String output = currentThread + ":" + temp + " ";
             System.out.print(ColourConstant.PURPLE_BOLD + output + ColourConstant.RESET);
 
-            TimeUnit.SECONDS.sleep(3);
+            TimeUnit.SECONDS.sleep(1);
             startTime = System.currentTimeMillis();
             temp++;
         }
@@ -51,7 +51,7 @@ public class Employee {
         //perform some task
         final String currentThread = Thread.currentThread().getName();
         long startTime = System.currentTimeMillis();
-        long endTime = startTime + 10000;
+        long endTime = startTime + 7000;
 
         int temp = 0;
         while (endTime > startTime) {
