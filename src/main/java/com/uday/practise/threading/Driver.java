@@ -32,6 +32,14 @@ public class Driver {
             }
         }, "t1");
 
+        /*Thread t4 = new Thread(() -> {
+            try {
+                e.printA();
+            } catch (InterruptedException ex) {
+                throw new RuntimeException(ex);
+            }
+        }, "t4");*/
+
         Thread t2 = new Thread(() -> {
             try {
                 e.printB();
@@ -48,10 +56,16 @@ public class Driver {
             }
         }, "t3");
 
-
-        t3.start();
+        long startTime = System.currentTimeMillis()/1000;
+        System.out.println(">>>" + startTime);
         t2.start();
         t1.start();
+        t3.start();
+        //t4.start();
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+            System.out.println(">>>totalTime" + (System.currentTimeMillis()/1000 - startTime));
+        }));
+
 
     }
 }
